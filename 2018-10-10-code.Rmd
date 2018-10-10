@@ -1,0 +1,35 @@
+---
+title: "class 10-10-18"
+author: "hannah hess"
+date: "October 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(readxl)
+
+class2018 <- read_excel("class_enrollment_summary_by_term_10.10.18.xlsx", skip = 3)
+class2017 <- read_excel("class_enrollment_summary_by_term_10.20.17.xlsx", skip = 3)
+
+```
+
+
+```{r cars}
+
+class2018 %>% 
+  select("Course ID", "Course Title", "Course Name", "Total") %>% 
+  arrange(desc(Total))
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

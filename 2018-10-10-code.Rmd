@@ -8,11 +8,23 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+
 library(tidyverse)
 library(readxl)
+library(janitor)
 
 class2018 <- read_excel("class_enrollment_summary_by_term_10.10.18.xlsx", skip = 3)
 class2017 <- read_excel("class_enrollment_summary_by_term_10.20.17.xlsx", skip = 3)
+class2016 <- read_excel("copy_of_class_enrollment_summary_by_term_10.06.2016.xlsx", skip = 3)
+
+
+
+```
+
+
+```{r}
+class2018 %>%  
+  clean_names()
 
 ```
 
